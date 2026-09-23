@@ -38,11 +38,12 @@
     $('frame-bottom').setAttribute('d',`M${x} ${b}H${g1}M${g2} ${b}H${r}`);
     opacity('#frame-left,#frame-right',1-.3*gap);opacity('#frame-top',1-.25*gap);
     $('frame-svg').dataset.bounds=[x,y,fw,fh].map(v=>v.toFixed(1)).join(',');
-    const cardHeight=mobile?Math.max(168,h*.36):Math.max(184,h*.36);
+    const compact=!mobile&&h<480;
+    const cardHeight=mobile?Math.max(168,h*.36):Math.max(compact?166:184,h*.36);
     const ch=cardHeight/h,exitY=Math.min(.64,1-ch-.018);
     const coords=mobile?
       [[0,.10,.50,.80,ch],[.12,.10,.50,.80,ch],[.26,.10,exitY,.80,ch],[.40,.15,.38,.80,ch],[.57,.15,.46,.80,ch],[.73,.15,.55,.80,ch],[1,.10,.395,.80,Math.max(224,h*.46)/h]]:
-      [[0,.13,.52,.32,ch],[.12,.13,.52,.32,ch],[.26,.13,exitY,.32,ch],[.40,.06,.47,.28,ch],[.57,.36,.47,.28,ch],[.73,.65,.47,.28,ch],[1,.12,.445,.76,Math.max(100,h*.20)/h]];
+      [[0,.13,compact?.48:.52,.32,ch],[.12,.13,compact?.48:.52,.32,ch],[.26,.13,exitY,.32,ch],[.40,.06,.47,.28,ch],[.57,.36,.47,.28,ch],[.73,.65,.47,.28,ch],[1,.12,.445,.76,Math.max(100,h*.20)/h]];
     const cr=keys(p,coords),cx=cr[0]*w,cy=cr[1]*h,cw=cr[2]*w,cheight=cr[3]*h;
     record.style.width=`${cw}px`;record.style.height=`${cheight}px`;record.style.transform=`translate3d(${Math.round(cx)}px,${Math.round(cy)}px,0)`;
     record.style.backgroundColor='#162033';

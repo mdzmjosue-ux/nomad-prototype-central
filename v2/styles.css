@@ -44,3 +44,5 @@ h1{font-size:39px;font-weight:500;line-height:1.16;letter-spacing:-1.75px}h1 spa
 /* Keep transparent labels small but readable, including on a phone. */
 .disclaimer{color:#66645f;font-size:10px}.eyebrow{color:#66645f}.window-context{color:#66645f}.flow-heading p span,.system-heading p span{color:#66645f}
 @media(max-width:700px){.disclaimer{font-size:9px;white-space:normal}.eyebrow{font-size:9px}.window-context{font-size:8px}.field dt{font-size:10px}.flow-heading p span,.system-heading p span{font-size:9px}.record-foot{font-size:9px}.request-label{font-size:9px}}
+
+@media(max-height:820px) and (min-width:701px){.topbar{min-height:64px}.introduction{padding:16px 0 6px}h1{font-size:32px;line-height:1.14}.web-title{top:27%;font-size:28px;line-height:1.1}.request-label{top:44%}.web-kicker{top:17%}.atelier-brand{font-size:18px}.cinematic-mode .theatre{min-height:360px}.disclaimer{padding:10px 0}.flow-heading>strong,.system-heading>strong{font-size:28px}}
